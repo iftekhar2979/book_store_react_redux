@@ -1,4 +1,4 @@
-import { ADDED_BOOK, LOADED_BOOK, UPDATING_BOOK } from "./ActionTypes"
+import { ADDED_BOOK, BOOK_REMOVED, LOADED_BOOK, UPDATING_BOOK } from "./ActionTypes"
 
 export const loaded=(book)=>{
     return{
@@ -16,5 +16,11 @@ export const upadingBook=(id,updatedDetails)=>{
     return{
         type:UPDATING_BOOK,
         payload:{id,updatedDetails}
+    }
+}
+export const removeBook=(id)=>{
+    return {
+        type:BOOK_REMOVED,
+        payload:id
     }
 }
