@@ -1,4 +1,4 @@
-import { ADDED_BOOK, LOADED_BOOK, UPDATING_BOOK } from "./ActionTypes"
+import { ADDED_BOOK, BOOK_REMOVED, LOADED_BOOK, UPDATING_BOOK } from "./ActionTypes"
 
 const intialState = [
     {
@@ -31,7 +31,8 @@ const bookReducer = (state = intialState, action) => {
                 }
                 return book
             })
-        
+        case BOOK_REMOVED:
+            return state.filter(book=>book.id!==action.payload)
         default:
             return state
     }
